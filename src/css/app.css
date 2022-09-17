@@ -35,3 +35,12 @@ body {
   background-color: var(--olive-drab-7);
   border: 3px solid var(--olive-drab-7-2);
 }
+
+.incremental {
+  width: 30%;
+}
+.arrows {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
