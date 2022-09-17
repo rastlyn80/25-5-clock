@@ -4,7 +4,7 @@ import React from "react";
 
 class Incremental extends React.Component {
   render() {
-    return <div>INCREMENTAL COMPONENT</div>;
+    return <div>{this.props.title}</div>;
   }
 }
 
