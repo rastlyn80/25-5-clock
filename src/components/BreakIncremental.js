@@ -18,19 +18,13 @@ class BreakIncremental extends React.Component {
       <div className="incremental" id="break-label">
         Break Length
         <div className="arrows">
-          <div id="break-increment">
-            <FontAwesomeIcon
-              icon={faArrowUp}
-              onClick={this.incrementBreakLength}
-            />
+          <div id="break-increment" onClick={this.incrementBreakLength}>
+            <FontAwesomeIcon icon={faArrowUp} />
           </div>
           <div id="break-length">{this.props.breakLength}</div>
 
-          <div id="break-decrement">
-            <FontAwesomeIcon
-              icon={faArrowDown}
-              onClick={this.decrementBreakLength}
-            />
+          <div id="break-decrement" onClick={this.decrementBreakLength}>
+            <FontAwesomeIcon icon={faArrowDown} />
           </div>
         </div>
       </div>
