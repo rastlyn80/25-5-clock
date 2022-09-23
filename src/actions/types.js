@@ -2,3 +2,6 @@ export const SESSION_LENGTH_UP = "SESSION_LENGTH_UP";
 export const SESSION_LENGTH_DOWN = "SESSION_LENGTH_DOWN";
 export const BREAK_LENGTH_UP = "BREAK_LENGTH_UP";
 export const BREAK_LENGTH_DOWN = "BREAK_LENGTH_DOWN";
+export const REFRESH = "REFRESH";
+export const START_TIMER = "START_TIMER";
+export const STOP_TIMER = "STOP_TIMER";
