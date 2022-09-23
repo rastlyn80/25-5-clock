@@ -17,18 +17,23 @@ class sessionIncremental extends React.Component {
 
   render() {
     return (
-      <div className="incremental">
+      <div className="incremental" id="session-label">
         Session Length
         <div className="arrows">
-          <FontAwesomeIcon
-            icon={faArrowUp}
-            onClick={this.incrementSessionLength}
-          />
+          <div id="session-increment">
+            <FontAwesomeIcon
+              icon={faArrowUp}
+              onClick={this.incrementSessionLength}
+            />
+          </div>
+          <div id="session-length">{this.props.sessionLength}</div>
           {this.props.sessionLength}
-          <FontAwesomeIcon
-            icon={faArrowDown}
-            onClick={this.decrementSessionLength}
-          />
+          <div id="session-decrement">
+            <FontAwesomeIcon
+              icon={faArrowDown}
+              onClick={this.decrementSessionLength}
+            />
+          </div>
         </div>
       </div>
     );
