@@ -4,7 +4,7 @@ const Credits = () => {
   return (
     <div className="credits">
       <div className="green-caption">Designed and Coded by</div>
-      Gabriel Baldock
+      Gabriel Baldwin
     </div>
   );
 };
