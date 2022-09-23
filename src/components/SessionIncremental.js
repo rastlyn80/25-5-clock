@@ -27,7 +27,6 @@ class sessionIncremental extends React.Component {
             />
           </div>
           <div id="session-length">{this.props.sessionLength}</div>
-          {this.props.sessionLength}
           <div id="session-decrement">
             <FontAwesomeIcon
               icon={faArrowDown}

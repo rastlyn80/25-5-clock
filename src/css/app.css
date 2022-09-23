@@ -44,3 +44,14 @@ body {
   justify-content: space-around;
   align-items: center;
 }
+
+#main-timer {
+  border-radius: 50px;
+  border: 5px solid var(--xanadu);
+  margin: 20px auto;
+  padding: 5px;
+  width: 50%;
+}
+#time-left {
+  font-size: 3em;
+}

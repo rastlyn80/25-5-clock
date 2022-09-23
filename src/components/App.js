@@ -2,6 +2,7 @@ import React from "react";
 import SessionIncremental from "./SessionIncremental";
 import BreakIncremental from "./BreakIncremental";
 import CountDown from "./CountDown";
+import Controls from "./Controls";
 
 class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class App extends React.Component {
           <div>
             <CountDown />
           </div>
+          <Controls />
         </div>
       </div>
     );
