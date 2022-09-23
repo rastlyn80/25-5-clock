@@ -17,8 +17,8 @@ class Controls extends React.Component {
           <FontAwesomeIcon icon={faPlay} />
           <FontAwesomeIcon icon={faPause} />
         </div>
-        <div id="reset">
-          <FontAwesomeIcon icon={faRefresh} onClick={this.refreshInterface} />
+        <div id="reset" onClick={this.refreshInterface}>
+          <FontAwesomeIcon icon={faRefresh} />
         </div>
       </div>
     );
