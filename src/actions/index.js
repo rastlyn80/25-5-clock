@@ -33,9 +33,10 @@ export const decrementBreak = () => {
   };
 };
 
-export const startTimer = () => {
+export const startTimer = (payload) => {
   return {
     type: START_TIMER,
+    payload: payload,
   };
 };
 

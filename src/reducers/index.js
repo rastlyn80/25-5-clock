@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import sessionLengthReducer from "./sessionLengthReducer";
 import breakLengthReducer from "./breakLengthReducer";
-import startStopReducer from "./startStopReducer";
+import timerReducer from "./timerReducer";
 
 export default combineReducers({
   sessionLength: sessionLengthReducer,
   breakLength: breakLengthReducer,
-  isRunning: startStopReducer,
+  timer: timerReducer,
 });
