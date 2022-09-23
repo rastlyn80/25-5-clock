@@ -3,9 +3,10 @@ import {
   SESSION_LENGTH_DOWN,
   BREAK_LENGTH_UP,
   BREAK_LENGTH_DOWN,
-  REFRESH,
   START_TIMER,
   STOP_TIMER,
+  SESSION_LENGTH_REFRESH,
+  BREAK_LENGTH_REFRESH,
 } from "./types";
 
 export const incrementSession = () => {
@@ -44,8 +45,14 @@ export const stopTimer = () => {
   };
 };
 
-export const refresh = () => {
+export const sessionRefresh = () => {
   return {
-    type: REFRESH,
+    type: SESSION_LENGTH_REFRESH,
+  };
+};
+
+export const breakRefresh = () => {
+  return {
+    type: BREAK_LENGTH_REFRESH,
   };
 };

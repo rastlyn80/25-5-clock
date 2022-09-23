@@ -1,8 +1,15 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faRefresh } from "@fortawesome/free-solid-svg-icons";
+import { connect } from "react-redux";
+import { sessionRefresh, breakRefresh, stopTimer } from "../actions";
 
 class Controls extends React.Component {
+  refreshInterface = () => {
+    this.props.stopTimer();
+    this.props.sessionRefresh();
+    this.props.breakRefresh();
+  };
   render() {
     return (
       <div className="arrows" style={{ width: "50%", margin: "auto" }}>
@@ -11,11 +18,13 @@ class Controls extends React.Component {
           <FontAwesomeIcon icon={faPause} />
         </div>
         <div id="reset">
-          <FontAwesomeIcon icon={faRefresh} />
+          <FontAwesomeIcon icon={faRefresh} onClick={this.refreshInterface} />
         </div>
       </div>
     );
   }
 }
 
-export default Controls;
+export default connect(null, { stopTimer, sessionRefresh, breakRefresh })(
+  Controls
+);
