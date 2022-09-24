@@ -2,11 +2,20 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay, faPause, faRefresh } from "@fortawesome/free-solid-svg-icons";
 import { connect } from "react-redux";
-import { refresh, startTimer, stopTimer, startBreak, tick } from "../actions";
+import {
+  refresh,
+  startTimer,
+  stopTimer,
+  startBreak,
+  startSession,
+  tick,
+} from "../actions";
 
 class Controls extends React.Component {
   refreshInterface = () => {
     clearInterval(this.props.timerInterval);
+    document.getElementById("beep").pause();
+    document.getElementById("beep").currentTime = 0;
     this.props.stopTimer();
     this.props.refresh();
   };
@@ -28,10 +37,11 @@ class Controls extends React.Component {
     this.props.startTimer(
       setInterval(() => {
         if (this.props.secondsRemaining === 0) {
+          document.getElementById("beep").play();
           if (this.props.isSession) {
             this.props.startBreak();
           } else {
-            this.startSession();
+            this.props.startSession();
           }
         } else {
           this.props.tick();
@@ -70,4 +80,5 @@ export default connect(mapStateToProps, {
   stopTimer,
   startBreak,
   tick,
+  startSession,
 })(Controls);

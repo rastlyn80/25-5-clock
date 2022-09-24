@@ -19,6 +19,7 @@ class CountDown extends React.Component {
       <div id="main-timer">
         <div id="timer-label">{this.timerCaption()}</div>
         <div id="time-left">{this.timeFormat()}</div>
+        <audio id="beep" src="./sounds/bell-a-99888.mp3"></audio>
       </div>
     );
   }
