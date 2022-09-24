@@ -33,7 +33,7 @@ class BreakIncremental extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { breakLength: state.breakLength.value };
+  return { breakLength: state.timer.breakLength };
 };
 
 export default connect(mapStateToProps, { incrementBreak, decrementBreak })(

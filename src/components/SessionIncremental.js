@@ -34,7 +34,7 @@ class sessionIncremental extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { sessionLength: state.sessionLength.value };
+  return { sessionLength: state.timer.sessionLength };
 };
 
 export default connect(mapStateToProps, { incrementSession, decrementSession })(
