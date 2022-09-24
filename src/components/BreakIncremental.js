@@ -6,11 +6,15 @@ import { incrementBreak, decrementBreak } from "../actions";
 
 class BreakIncremental extends React.Component {
   incrementBreakLength = () => {
-    this.props.incrementBreak();
+    if (!this.props.isRunning) {
+      this.props.incrementBreak();
+    }
   };
 
   decrementBreakLength = () => {
-    this.props.decrementBreak();
+    if (!this.props.isRunning) {
+      this.props.decrementBreak();
+    }
   };
 
   render() {
@@ -33,7 +37,10 @@ class BreakIncremental extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { breakLength: state.timer.breakLength };
+  return {
+    breakLength: state.timer.breakLength,
+    isRunning: state.timer.isRunning,
+  };
 };
 
 export default connect(mapStateToProps, { incrementBreak, decrementBreak })(

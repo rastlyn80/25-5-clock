@@ -6,3 +6,5 @@ export const START_TIMER = "START_TIMER";
 export const STOP_TIMER = "STOP_TIMER";
 export const REFRESH = "BREAK_LENGTH_REFRESH";
 export const TICK = "TICK";
+export const START_BREAK = "START_BREAK";
+export const START_SESSION = "START_SESSION";

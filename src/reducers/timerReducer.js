@@ -7,6 +7,8 @@ import {
   START_TIMER,
   STOP_TIMER,
   TICK,
+  START_BREAK,
+  START_SESSION,
 } from "../actions/types";
 
 const INITIAL_STATE = {
@@ -15,7 +17,7 @@ const INITIAL_STATE = {
   isRunning: false,
   secondsRemaining: 25 * 60,
   interval: null,
-  type: "session",
+  isSession: true,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -56,9 +58,19 @@ export default (state = INITIAL_STATE, action) => {
         interval: action.payload,
       };
     case TICK:
-      console.log(state.secondsRemaining);
       return { ...state, secondsRemaining: state.secondsRemaining - 1 };
-
+    case START_BREAK:
+      return {
+        ...state,
+        secondsRemaining: state.breakLength * 60,
+        isSession: false,
+      };
+    case START_SESSION:
+      return {
+        ...state,
+        secondsRemaining: state.sessionLength * 60,
+        isSession: true,
+      };
     default:
       return state;
   }

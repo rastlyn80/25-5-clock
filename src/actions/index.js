@@ -7,6 +7,8 @@ import {
   STOP_TIMER,
   REFRESH,
   TICK,
+  START_BREAK,
+  START_SESSION,
 } from "./types";
 
 export const incrementSession = () => {
@@ -55,5 +57,17 @@ export const refresh = () => {
 export const tick = () => {
   return {
     type: TICK,
+  };
+};
+
+export const startBreak = () => {
+  return {
+    type: START_BREAK,
+  };
+};
+
+export const startSession = () => {
+  return {
+    type: START_SESSION,
   };
 };

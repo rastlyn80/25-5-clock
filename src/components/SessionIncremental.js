@@ -8,11 +8,15 @@ import { incrementSession, decrementSession } from "../actions";
 
 class sessionIncremental extends React.Component {
   incrementSessionLength = () => {
-    this.props.incrementSession();
+    if (!this.props.isRunning) {
+      this.props.incrementSession();
+    }
   };
 
   decrementSessionLength = () => {
-    this.props.decrementSession();
+    if (!this.props.isRunning) {
+      this.props.decrementSession();
+    }
   };
 
   render() {
@@ -34,7 +38,10 @@ class sessionIncremental extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return { sessionLength: state.timer.sessionLength };
+  return {
+    sessionLength: state.timer.sessionLength,
+    isRunning: state.timer.isRunning,
+  };
 };
 
 export default connect(mapStateToProps, { incrementSession, decrementSession })(
